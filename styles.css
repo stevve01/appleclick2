@@ -12,103 +12,31 @@ body {
   display: none;
 }
 
-.window {
+/* Apple Falling Animation */
+@keyframes fall {
+  0% {
+    top: -10%;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 110%;
+    transform: rotate(360deg);
+  }
+}
+
+.apple {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 20px #000;
-  max-width: 90%;
-  max-height: 80%;
-  overflow-y: auto;
-  color: #fff;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background-image: url('https://example.com/apple.png'); /* Example apple image */
+  background-size: cover;
+  z-index: 1;
+  animation: fall linear infinite;
 }
 
-#start-screen {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 20px #000;
-}
-
-#game-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  border: 2px solid #4CAF50;
-  border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 0px 20px #000;
-}
-
-#header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.5rem;
-}
-
-#click-button {
-  font-size: 2rem;
-  padding: 20px;
-  margin-top: 20px;
-  background-color: #ff5722;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  transition: transform 0.2s;
-}
-
-#click-button:hover {
-  transform: scale(1.1);
-}
-
-#navigation-menu {
-  margin-top: 20px;
-}
-
-button {
-  margin: 10px;
-  padding: 15px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  background-color: #ff9800;
-  color: white;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #e65100;
-}
-
-button.close-window {
-  background-color: #c62828;
-}
-
-button.close-window:hover {
-  background-color: #b71c1c;
-}
-
-#quest-status, #craft-status, #mini-game-status, #achievements-list {
-  font-style: italic;
-  color: #b2ff59;
-}
-
-#credits {
-  margin-top: 50px;
-  font-size: 1rem;
-  color: #ccc;
-}
-
+/* Responsive adjustments for mobile */
 @media (max-width: 600px) {
   #game-container {
     width: 95%;
@@ -116,7 +44,8 @@ button.close-window:hover {
   }
 
   button {
-    width: 90%;
-    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
   }
 }
